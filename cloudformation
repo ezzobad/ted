@@ -88,7 +88,7 @@
         },
         "position": {
           "x": 4220,
-          "y": 440
+          "y": 440l
         },
         "z": 0,
         "parent": "f6ffaafc-16fb-4adf-882b-9f88015f51b7",
@@ -1413,10 +1413,10 @@
         ],
         "HealthCheck": {
           "Target": "tcp:80",
-          "HealthyThreshold": "3",
-          "UnhealthyThreshold": "2",
-          "Interval": "5",
-          "Timeout": "2"
+          "HealthyThreshold": "5",
+          "UnhealthyThreshold": "4",
+          "Interval": "30",
+          "Timeout": "5"
         },
         "SecurityGroups": [
           {
