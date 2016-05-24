@@ -1,7 +1,7 @@
 #!/bin/bash
 yum update -y
 yum install httpd python34 python34-pip -y
-/usr/bin/pip-3.4 install --upgrade pip
+#/usr/bin/pip-3.4 install --upgrade pip
 sleep 5
 sync; sync; sync
 /usr/bin/pip-3.4 install sphinx
