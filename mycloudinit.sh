@@ -4,7 +4,7 @@ yum install httpd python34 python-pip -y
 pip install --upgrade pip
 sleep 5
 sync; sync; sync
-pip install sphinx htmltag
+/usr/local/bin/pip install sphinx htmltag
 chkconfig httpd on
 wget https://raw.githubusercontent.com/ezzobad/ted/master/ted.py -O /var/www/cgi-bin/ted.py
 chmod +x /var/www/cgi-bin/ted.py
