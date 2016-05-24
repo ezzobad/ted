@@ -1176,10 +1176,10 @@
               [
                 "#!/bin/bash -xe\n",
                 "yum update -y\n",
-                "yum install httpd -y\n",
+                "yum install httpd python34 -y\n",
                 "chkconfig httpd on\n",
                 "service httpd start\n",
-                "wget https://raw.githubusercontent.com/ezzobad/ted/master/ted.sh -O /tmp/ted.sh\n",
+                "wget https://raw.githubusercontent.com/ezzobad/ted/master/ted.py -O /tmp/ted.py\n",
                 "chmod +x /tmp/ted.sh; /tmp/ted.sh\n",
                 "/opt/aws/bin/cfn-signal -e 0 --stack ",
                 {
