@@ -1,4 +1,4 @@
-#!/usr/bin/python34
+#!/usr/bin/python
 
 from htmltag import img, center
 from time import gmtime, strftime
