@@ -2,18 +2,25 @@
 
 from htmltag import img, center
 from time import gmtime, strftime
+import subprocess
 
 print("Content-Type: text/html;charset=utf-8")
 print("")
-print ("<br />")
-print ("<br />")
-print ("<br />")
-print ("<br />")
 
-InstanceID="i-0b8e956b660ce3568"
-PublicIP="N/A"
-PrivateIP="10.0.1.23"
-AZ="us-east-1"
+InstanceID = subprocess.getoutput("curl -s http://169.254.169.254/latest/meta-data/instance-id").replace(" ","")
+
+PublicIP = subprocess.getoutput("curl -s http://169.254.169.254/latest/meta-data/public-ipv4").replace(" ","")
+if PublicIP == "":
+    PublicIP = "N/A"
+
+PrivateIP = subprocess.getoutput("curl -s http://169.254.169.254/latest/meta-data/local-ipv4").replace(" ","")
+
+AZ = subprocess.getoutput("curl -s http://169.254.169.254/latest/meta-data/placement/availability-zone/").replace(" ","")
+
+print ("<br />")
+print ("<br />")
+print ("<br />")
+print ("<br />")
 
 homer=center(img(src="https://github.com/ezzobad/ted/raw/master/woohoo.jpg",align="middle",style="width:250;height:200;"))
 print (homer)
@@ -33,6 +40,7 @@ print ('<td><font size="5">'+PrivateIP+'</font></td>')
 print ('<td> <font size="5">'+AZ+'</font></td>')
 print ('</tr>')
 print ('</table>')
+print ("<br />")
 print ("<br />")
 timestamp=strftime("%Y-%m-%d %H:%M:%S", gmtime())
 print ('<font size="5">'+timestamp+'</font>')
