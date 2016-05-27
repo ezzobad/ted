@@ -9,9 +9,11 @@ print("")
 
 InstanceID = subprocess.getoutput("curl -s http://169.254.169.254/latest/meta-data/instance-id").replace(" ","")
 
-PublicIP = subprocess.getoutput("curl -s http://169.254.169.254/latest/meta-data/public-ipv4").replace(" ","")
-if PublicIP == "":
-    PublicIP = "N/A"
+temp = subprocess.getoutput("curl -s http://169.254.169.254/latest/meta-data/public-ipv4").replace(" ","")
+if len(re.findall('404-NotFound',temp)) == 0:
+    PublicIP=temp
+else:
+    PublicIP="N/A"
 
 PrivateIP = subprocess.getoutput("curl -s http://169.254.169.254/latest/meta-data/local-ipv4").replace(" ","")
 
