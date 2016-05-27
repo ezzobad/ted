@@ -3,6 +3,7 @@
 from htmltag import img, center
 from time import gmtime, strftime
 import subprocess
+import re
 
 print("Content-Type: text/html;charset=utf-8")
 print("")
